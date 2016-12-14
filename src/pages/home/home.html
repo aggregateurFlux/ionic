@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      LiveFeed
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	
+    <div id="feedContent" class="scroll-content">
+    	<button ion-button block (click)="showFilterCheckbox()">
+	      Filter
+	    </button>
+	    <ion-card *ngFor="let card of cards">
+		  <ion-item>
+		    <ion-avatar item-left>
+		      <img src="{{card.user_image}}">
+		    </ion-avatar>
+		    <h2>{{card.authorName}}</h2>
+		    <p>{{card.postCreatedAt}}</p>
+		  </ion-item>
+
+		  <img src="{{card.imageLink}}">
+
+		  <ion-card-content>
+		    <p>{{card.content}}</p>
+		  </ion-card-content>
+		</ion-card>
+    </div>
+</ion-content>
